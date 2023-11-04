@@ -3,7 +3,7 @@ import { genRandomId } from '../../methods.js';
 
 import './TodoInput.scss';
 
-export default function TodoInput({ addTodo }) {
+export default function TodoInput({ onAddTodo }) {
   const [todoTitle, setTodoTitle] = useState('');
 
   function handleTodoChange(event) {
@@ -11,7 +11,7 @@ export default function TodoInput({ addTodo }) {
   }
 
   function handleTodoAdd() {
-    addTodo({
+    onAddTodo({
       id: genRandomId(),
       title: todoTitle,
     });

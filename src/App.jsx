@@ -24,13 +24,13 @@ const initialTodos = [
 export default function App() {
   const [todos, setTodos] = useState([...initialTodos]);
 
-  function addTodo(todo) {
+  function handleAddTodo(todo) {
     setTodos((prevTodos) => {
       return [...prevTodos, todo];
     });
   }
 
-  function deleteTodo(todoId) {
+  function handleDeleteTodo(todoId) {
     setTodos((prevTodos) => {
       const newTodos = [
         ...prevTodos.filter((todo) => {
@@ -42,7 +42,7 @@ export default function App() {
     });
   }
 
-  function updateTodo(todo) {
+  function handleUpdateTodo(todo) {
     setTodos((prevTodos) => {
       const newTodos = [...prevTodos];
       let todoIndex = prevTodos.findIndex((td) => td.id === todo.id);
@@ -54,11 +54,11 @@ export default function App() {
   return (
     <div className='main'>
       <Header text='To-do App' />
-      <TodoInput addTodo={addTodo} />
+      <TodoInput onAddTodo={handleAddTodo} />
       <Todos
         todos={todos}
-        onDeleteTodo={deleteTodo}
-        onUpdateTodo={updateTodo}
+        onDeleteTodo={handleDeleteTodo}
+        onUpdateTodo={handleUpdateTodo}
       />
     </div>
   );
