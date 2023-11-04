@@ -1,3 +1,5 @@
+import './Header.scss';
+
 export default function Header({ text }) {
   return (
     <div className='header'>

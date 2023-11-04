@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { genRandomId } from '../methods.js';
+import { genRandomId } from '../../methods.js';
+
+import './TodoInput.scss';
 
 export default function TodoInput({ addTodo }) {
   const [todoTitle, setTodoTitle] = useState('');
@@ -18,7 +20,7 @@ export default function TodoInput({ addTodo }) {
 
   return (
     <div className='todo-input__container'>
-      <label>Type in a todo</label>
+      <label>What do you want to do today?</label>
       <input
         type='text'
         onChange={(event) => handleTodoChange(event)}

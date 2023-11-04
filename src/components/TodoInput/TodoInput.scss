@@ -1,0 +1,33 @@
+.todo-input__container {
+  height: 10rem;
+  width: 80%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  padding-inline: 4rem;
+  background-color: #333;
+  border-radius: 2rem 2rem 0 0;
+  margin-top: 5rem;
+}
+
+.todo-input__container {
+  label {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  input {
+    font-size: 2rem;
+    color: #252525;
+    padding: 0.5rem;
+  }
+
+  button {
+    font-size: 1.5rem;
+    color: #252525;
+    padding: 0.5rem;
+  }
+}

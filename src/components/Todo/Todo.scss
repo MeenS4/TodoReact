@@ -1,0 +1,27 @@
+.todo {
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 4rem;
+  border-bottom: 2px solid #555;
+}
+
+.todo__title {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.todo__button {
+  color: #252525;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.edit-todo-title__input {
+  font-size: 2.5rem;
+  color: #252525;
+  padding: 0.5rem;
+  font-weight: 500;
+}

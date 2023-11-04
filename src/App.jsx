@@ -1,8 +1,10 @@
-import Header from './components/Header';
-import Todos from './components/Todos';
-import TodoInput from './components/TodoInput';
+import Header from './components/Header/Header.jsx';
+import Todos from './components/Todos/Todos.jsx';
+import TodoInput from './components/TodoInput/TodoInput.jsx';
 import { genRandomId } from './methods.js';
 import { useState } from 'react';
+
+import './App.scss';
 
 const initialTodos = [
   {
@@ -40,11 +42,24 @@ export default function App() {
     });
   }
 
+  function updateTodo(todo) {
+    setTodos((prevTodos) => {
+      const newTodos = [...prevTodos];
+      let todoIndex = prevTodos.findIndex((td) => td.id === todo.id);
+      newTodos[todoIndex] = todo;
+      return newTodos;
+    });
+  }
+
   return (
     <div className='main'>
       <Header text='To-do App' />
       <TodoInput addTodo={addTodo} />
-      <Todos todos={todos} deleteTodo={deleteTodo} />
+      <Todos
+        todos={todos}
+        onDeleteTodo={deleteTodo}
+        onUpdateTodo={updateTodo}
+      />
     </div>
   );
 }
